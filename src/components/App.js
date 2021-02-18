@@ -1,36 +1,22 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import "./App.css";
+import Landing from "./Landing";
+import { Switch, Route } from "react-router-dom";
+import Category from "./Category";
 
 function App() {
-  const [categories, setCategories] = useState(null);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      const data = (
-        await axios.get(
-          "https://www.themealdb.com/api/json/v1/1/categories.php"
-        )
-      ).data;
-      setCategories(data.categories);
-    };
-    fetchCategories();
-  }, []);
-
-  console.log(categories);
-
   return (
     <div className="App">
-      <h1>Categories</h1>
-      {categories &&
-        categories.map((cat) => {
-          return (
-            <div key={cat.idCategory}>
-              <img src={cat.strCategoryThumb} alt={cat.strCategory} />
-              <h2>{cat.strCategory}</h2>
-            </div>
-          );
-        })}
+      <Switch>
+        <Route path="/" exact>
+          <Landing />
+        </Route>
+        <Route path="/category/:id" exact>
+          <Category />
+        </Route>
+        <Route>
+          <h1>404</h1>
+        </Route>
+      </Switch>
     </div>
   );
 }

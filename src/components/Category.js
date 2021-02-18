@@ -22,7 +22,8 @@ function Category() {
   return (
     <div>
       <h1>{catId}</h1>
-      {recipies && recipies.map((r) => <RecipeCard recipe={r} />)}
+      {recipies &&
+        recipies.map((r) => <RecipeCard key={r.idMeal} recipe={r} />)}
     </div>
   );
 }

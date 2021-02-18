@@ -5,7 +5,6 @@ function RecipeCard({ recipe }) {
   const history = useHistory();
   return (
     <div
-      key={recipe.idMeal}
       className="clickable"
       onClick={() => {
         history.push(`/recipe/${recipe.idMeal}`);

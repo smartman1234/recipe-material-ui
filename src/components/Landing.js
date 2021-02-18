@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 
 function Landing() {
+  const history = useHistory();
   const [categories, setCategories] = useState(null);
 
   useEffect(() => {
@@ -17,7 +19,9 @@ function Landing() {
     fetchCategories();
   }, []);
 
-  console.log(categories);
+  function handleClick(category) {
+    history.push(`category/${category}`);
+  }
 
   return (
     <div className="App">
@@ -25,7 +29,13 @@ function Landing() {
       {categories &&
         categories.map((cat) => {
           return (
-            <div key={cat.idCategory}>
+            <div
+              key={cat.idCategory}
+              onClick={() => {
+                handleClick(cat.strCategory);
+              }}
+              className="clickable"
+            >
               <img src={cat.strCategoryThumb} alt={cat.strCategory} />
               <h2>{cat.strCategory}</h2>
             </div>

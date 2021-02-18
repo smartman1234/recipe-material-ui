@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import RecipeCard from "./RecipeCard";
 
 function Category() {
   // const history = useHistory();
@@ -21,13 +22,7 @@ function Category() {
   return (
     <div>
       <h1>{catId}</h1>
-      {recipies &&
-        recipies.map((r) => (
-          <div key={r.idMeal}>
-            <img src={r.strMealThumb + "/preview"} alt={r.strMeal} />
-            <h2>{r.strMeal}</h2>
-          </div>
-        ))}
+      {recipies && recipies.map((r) => <RecipeCard recipe={r} />)}
     </div>
   );
 }

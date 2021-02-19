@@ -1,5 +1,5 @@
 import Landing from "./Landing";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import Category from "./Category";
 import Recipe from "./Recipe";
 import SearchBar from "./SearchBar";
@@ -17,15 +17,14 @@ import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "fixed",
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-}));
-
 function ScrollTop(props) {
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      position: "fixed",
+      bottom: theme.spacing(2),
+      right: theme.spacing(2),
+    },
+  }));
   const { children, window } = props;
   const classes = useStyles();
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -62,7 +61,9 @@ function App(props) {
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <Typography variant="h6">The Meal Hub</Typography>
+          <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+            <Typography variant="h6">The Meal Hub</Typography>
+          </Link>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />

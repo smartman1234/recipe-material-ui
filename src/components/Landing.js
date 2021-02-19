@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import "./App.css";
 
 function Landing() {
   const history = useHistory();

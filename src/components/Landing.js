@@ -7,9 +7,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    marginTop: theme.spacing(5),
-  },
   gridItem: {
     display: "flex",
     justifyContent: "center",
@@ -44,7 +41,7 @@ function Landing() {
   }
 
   return (
-    <div className={classes.root}>
+    <div>
       <Grid container spacing={1}>
         {categories &&
           categories.map((cat) => {

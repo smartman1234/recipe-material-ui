@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import RecipeCard from "./RecipeCard";
+import Spinner from "./Spinner";
 
 import Grid from "@material-ui/core/Grid";
 
@@ -23,7 +24,7 @@ function SearchRecipe() {
 
   if (!recipies) {
     if (loading) {
-      return <h1>Loading</h1>;
+      return <Spinner />;
     }
     return <h1>No results found!</h1>;
   }

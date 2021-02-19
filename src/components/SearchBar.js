@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     width: 800,
     maxWidth: "100%",
     margin: "auto",
+    marginBottom: theme.spacing(5),
   },
   input: {
     marginLeft: theme.spacing(1),

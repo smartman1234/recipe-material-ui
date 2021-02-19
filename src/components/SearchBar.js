@@ -40,8 +40,9 @@ function SearchBar() {
       <InputBase
         inputRef={inputRef}
         className={classes.input}
-        placeholder="search recipe by text"
+        placeholder="Search Recipies"
         inputProps={{ "aria-label": "search google maps" }}
+        required
       />
       <IconButton
         type="submit"

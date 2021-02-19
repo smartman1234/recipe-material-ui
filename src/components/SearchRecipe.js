@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import RecipeCard from "./RecipeCard";
 
+import Grid from "@material-ui/core/Grid";
+
 function SearchRecipe() {
   const { query } = useParams();
   const [recipies, setRecipies] = useState(null);
@@ -27,10 +29,10 @@ function SearchRecipe() {
   }
 
   return (
-    <div>
+    <Grid container spacing={1}>
       {recipies &&
         recipies.map((r) => <RecipeCard key={r.idMeal} recipe={r} />)}
-    </div>
+    </Grid>
   );
 }
 

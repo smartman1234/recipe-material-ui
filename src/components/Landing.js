@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import Spinner from "./Spinner";
 
 function Landing() {
   const history = useHistory();
@@ -20,6 +21,9 @@ function Landing() {
 
   function handleClick(category) {
     history.push(`category/${category}`);
+  }
+  if (!categories) {
+    return <Spinner />;
   }
 
   return (

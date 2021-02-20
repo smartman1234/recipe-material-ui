@@ -4,21 +4,7 @@ import { useParams } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
 import Spinner from "./Spinner";
 
-import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    marginTop: theme.spacing(5),
-  },
-  gridItem: {
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
-    alignContent: "center",
-    cursor: "pointer",
-  },
-}));
 
 function Category() {
   const params = useParams();
